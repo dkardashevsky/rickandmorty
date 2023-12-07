@@ -1,3 +1,5 @@
+// services/api.tsx
+
 import { useQuery } from 'react-query';
 
 export const fetchCharacters = async () => {

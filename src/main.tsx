@@ -1,6 +1,6 @@
 // src/main.tsx
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'; // Вернули правильный импорт
 import HomePage from './pages/index';
 
 const App: React.FC = () => {
@@ -14,7 +14,9 @@ const App: React.FC = () => {
 };
 
 const rootElement = document.getElementById('root');
-const createRoot = (ReactDOM as any).createRoot || (ReactDOM as any).unstable_createRoot;
 
-const root = createRoot(rootElement);
-root.render(<App />);
+if (rootElement) {
+  ReactDOM.render(<App />, rootElement);
+} else {
+  console.error('Root element not found');
+}

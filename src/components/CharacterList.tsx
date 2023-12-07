@@ -1,12 +1,7 @@
 // components/CharacterList.tsx
 import React from 'react';
 import { useCharacters } from '../services/api';
-
-interface Character {
-  id: number;
-  name: string;
-  // Добавь другие свойства персонажа, если они есть
-}
+import CharacterCard from './CharacterCard';
 
 const CharacterList: React.FC = () => {
   const { data: characters, isLoading, isError } = useCharacters();
@@ -15,11 +10,11 @@ const CharacterList: React.FC = () => {
   if (isError) return <p>Error fetching characters</p>;
 
   return (
-    <ul>
-      {characters.results.map((character: Character) => (
-        <li key={character.id}>{character.name}</li>
+    <div>
+      {characters.results.map((character) => (
+        <CharacterCard key={character.id} character={character} />
       ))}
-    </ul>
+    </div>
   );
 };
 
