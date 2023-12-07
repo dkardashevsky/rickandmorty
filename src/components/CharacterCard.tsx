@@ -1,4 +1,3 @@
-// components/CharacterCard.tsx
 import React from 'react';
 import { Card, Avatar } from '@nextui-org/react';
 
@@ -6,7 +5,6 @@ interface CharacterCardProps {
   character: {
     image: string;
     name: string;
-    // Добавь другие поля, если необходимо
   };
 }
 
